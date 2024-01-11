@@ -1,19 +1,19 @@
 #include <stdio.h>
 /**
- * main - prints the alphabet in lowercase, and then in upper case
+ * main - prints all the numbers of base 16 in lowercase
  * Return: 0
  */
 int main(void)
 {
-	int k = 97;
-	int j = 65;
+	int k = 48;
+	int j = 97;
 
-	while (k <= 122)
+	while (k <= 57)
 	{
 		putchar(k);
 		k++;
 	}
-	while (j <= 90)
+	while (j <= 102)
 	{
 		putchar(j);
 		j++;
@@ -21,3 +21,4 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
+
