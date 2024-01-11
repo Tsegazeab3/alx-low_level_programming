@@ -8,11 +8,11 @@
 int main(void)
 {
 	int n;
+	int k;
+	int rem;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	int k = 0;
-
 	if (n >= 0)
 	{
 		k = n;
@@ -21,7 +21,7 @@ int main(void)
 	{
 		k = -n;
 	}
-	int rem = k % 10;
+	rem = k % 10;
 
 	if (rem > 5)
 	{
