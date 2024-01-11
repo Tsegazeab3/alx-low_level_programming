@@ -11,8 +11,8 @@ int main(void)
 	{
 		putchar(k);
 		putchar(k + 32);
-		putchar('\n');
 		k++;
 	}
+	putchar('\n');
 	return (0);
 }
