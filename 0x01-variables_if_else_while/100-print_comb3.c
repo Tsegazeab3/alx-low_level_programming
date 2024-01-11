@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int first_digit = 48 ;
+	int first_digit = 48;
 	int second_digit;
 
 	while (first_digit <= '8')
@@ -16,7 +16,7 @@ int main(void)
 			putchar(first_digit);
 			putchar(second_digit);
 			if (first_digit != '8')
-			{	
+			{
 				putchar(',');
 				putchar(' ');
 			}
