@@ -7,9 +7,8 @@ int main(void)
 {
 	char letter[] = "_putchar";
 	int k = 0;
-	int size = sizeof(letter) / sizeof(letter[0]);
 
-	while (k < size)
+	while (k < 8)
 	{
 		_putchar(letter[k]);
 		k++;
