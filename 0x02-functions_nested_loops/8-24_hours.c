@@ -33,7 +33,7 @@ void jack_bauer(void)
 					big_minute++;
 				}
 				little_hour++;
-				if (big_hour == 50 && little_hour == 53)
+				if (big_hour == 50 && little_hour == 52)
 				{
 					break;
 				}
