@@ -16,7 +16,6 @@ void times_table(void)
 			int rem = product % 10;
 			int root = (product - rem) / 10;
 
-			
 			if (product <= 9)
 			{
 			if (lower_table == 0)
@@ -45,6 +44,3 @@ void times_table(void)
 		upper_table++;
 	}
 }
-
-
-	
