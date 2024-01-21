@@ -4,7 +4,7 @@
  * @s: string to be counted
  * Return: an integer to be counted
  */
-int _strlen_recursion(char *s);
+int _strlen_recursion(char *s)
 {
 	int i = 0;
 
