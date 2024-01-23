@@ -21,13 +21,6 @@ int _sqrt_recursion(int n)
 	else
 		return (_sqrt_aider(n, 0, n));
 }
-/**
- * _sqrt_aider - aids the above function
- * @n: number to check with
- * @low: the lowest number
- * @high: the highest num
- * Return: depends on the number
- */
 int _sqrt_aider(int n, int low, int high)
 {
 	int mid = (high + low) / 2;
