@@ -13,8 +13,8 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 	while (argv[0][j])
 	{
-		j++;
 		printf("%c", argv[0][j]);
+		j++;
 	}
 	printf("\n");
 	return (0);
