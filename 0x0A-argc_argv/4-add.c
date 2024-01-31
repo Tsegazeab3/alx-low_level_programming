@@ -25,6 +25,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	if (argc == 1)
 	{
 		printf("0");
+		printf("\n");
 		return (0);
 	}
 	while (argv[i])
