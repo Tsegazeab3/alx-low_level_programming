@@ -23,7 +23,10 @@ int main(int argc __attribute__((unused)), char **argv)
 	int j = 0;
 
 	if (argc == 1)
+	{
+		printf("0");
 		return (0);
+	}
 	while (argv[i])
 	{
 		if (isInteger(argv[i]))
