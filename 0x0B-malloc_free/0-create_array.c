@@ -9,7 +9,7 @@ char *create_array(unsigned int size, char c)
 {
 	if (size > 0)
 	{
-		char *p = (char *) calloc(size, size * sizeof(c));
+		char *p = (char *) calloc(size, sizeof(c));
 		unsigned int i;
 
 		for (i = 0; i < size; i++)
