@@ -7,9 +7,10 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **p = (int **) calloc(height, sizeof(int *));
+	int **p = (int **)calloc(height, sizeof(int *)); 
 	int i = 0;
-
+	if (p == NULL)
+		return (NULL);
 	while (i < height)
 	{
 		free(p[i]);
