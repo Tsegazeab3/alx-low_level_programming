@@ -7,6 +7,10 @@
  */
 char *str_concat(char *s1, char *s2)
 {
+	if (s1 == null)
+		s1 = "";
+	if (s2 == null)
+		s2 = "";
 	char *p = (char *)calloc((strlen(s1) + strlen(s2) + 1), sizeof(char));
 	int i = 0;
 	int j = 0;
