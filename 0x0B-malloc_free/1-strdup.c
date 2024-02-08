@@ -9,7 +9,7 @@ char *_strdup(char *str)
 	if (str != NULL)
 	{
 		int i = strlen(str);
-		char *p = (char *)malloc((i + 1) * sizeof(char));
+		char *p = (char *)calloc((i + 1),sizeof(char));
 		int j = 0;
 
 		while (j < i)
