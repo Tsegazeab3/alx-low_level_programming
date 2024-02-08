@@ -7,11 +7,12 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **p = (int **) calloc(height, sizeof(int));
+	int **p = (int **) calloc(height, sizeof(int *));
 	int i = 0;
 
 	while (i < height)
 	{
+		free(p[i]);
 		p[i] = (int *) calloc(width, sizeof(int));
 		i++;
 	}
