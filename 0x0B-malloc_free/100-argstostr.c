@@ -14,17 +14,13 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
-		j = 0;
-		while (av[i][j])
+		for (j = 0; av[i][j]; j++)
 		{
 			k++;
-			j++;
 		}
-		k++;
-		i++;
 	}
-	p = (char *) calloc((k + ac + 1), sizeof(char));
-	if ( p == NULL)
+	p = malloc((sizeof(char) * k) +  ac + 1);
+	if (p == NULL)
 	{
 		free(p);
 		return (NULL);
