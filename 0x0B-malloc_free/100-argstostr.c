@@ -23,7 +23,12 @@ char *argstostr(int ac, char **av)
 		k++;
 		i++;
 	}
-	p = (char *) malloc(sizeof(char) * (k + ac + 1));
+	p = (char *) calloc((k + ac + 1), sizeof(char));
+	if ( p == NULL)
+	{
+		free(p);
+		return (NULL);
+	}
 	k = 0;
 	for (i = 0; i < ac; i++)
 	{
