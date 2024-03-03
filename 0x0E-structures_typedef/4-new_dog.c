@@ -8,20 +8,22 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (name == NULL || owner == NULL)
-		return (NULL);
-	dog_t *dog = malloc(sizeof(dog_t));
-	int len1 = strlen(name + 1);
-	int len2 = strlen(owner + 1);
+	if (name && owner)
+	{
+		dog_t *dog = malloc(sizeof(dog_t));
+		int len1 = strlen(name + 1);
+		int len2 = strlen(owner + 1);
 
-	dog->name = malloc(len1);
-	if (dog->name == NULL)
-		return (NULL);
-	dog->owner = malloc(len2);
-	if (dog->name == NULL)
-		return (NULL);
-	strcpy(dog->name, name);
-		dog->age = age;
-	strcpy(dog->owner, owner);
-	return (dog);
+		dog->name = malloc(len1);
+		if (dog->name == NULL)
+			return (NULL);
+		dog->owner = malloc(len2);
+		if (dog->name == NULL)
+			return (NULL);
+		strcpy(dog->name, name);
+			dog->age = age;
+		strcpy(dog->owner, owner);
+		return (dog);
+	}
+	return(NULL);
 }
