@@ -8,8 +8,6 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (name && owner)
-	{
 		dog_t *dog = malloc(sizeof(dog_t));
 		int len1 = strlen(name);
 		int len2 = strlen(owner);
@@ -28,9 +26,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 		strcpy(dog->name, name);
-			dog->age = age;
+		dog->age = age;
 		strcpy(dog->owner, owner);
 		return (dog);
-	}
-	return (NULL);
 }
