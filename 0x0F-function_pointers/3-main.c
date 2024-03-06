@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
 			int a = func(atoi(argv[1]), atoi(argv[3]));
 
 			printf("%d\n", a);
-			return (0);
+			return (EXIT_SUCCESS);
 		}
 		printf("ERROR\n");
-		return (99);
+		exit (99);
 	}
 	printf("ERROR\n");
-	return (98);
+	exit (98);
 }
