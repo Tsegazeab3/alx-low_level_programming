@@ -40,7 +40,7 @@ void print_all(const char * const format, ...)
 				char *a = va_arg(word, char *);
 
 				if (!a)
-					a = "nill";
+					a = "(nill)";
 				printf("%s", a);
 				break;
 			}
