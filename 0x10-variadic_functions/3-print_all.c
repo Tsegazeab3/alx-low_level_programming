@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 	va_list word;
 
 	va_start(word, format);
-	while (format[i])
+	while (i < n)
 	{
 		k = 0;
 		switch (format[i])
