@@ -21,7 +21,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node);
 		return (0);
 	}
-	strcpy(value_cp,value);
+	strcpy(value_cp, value);
 	node->key = strdup(key);
 	node->value = value_cp;
 	node->next = NULL;
