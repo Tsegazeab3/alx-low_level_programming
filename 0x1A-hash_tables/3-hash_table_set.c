@@ -30,15 +30,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		node->next = ht->array[index];
 		ht->array[index] = node;
-		free(value_cp);
 		return (1);
 	}
 	else if (ht->array[index] == NULL)
 	{
 		ht->array[index] = node;
-		free(value_cp);
 		return (1);
 	}
+	free(value_cp);
 	return (0);
 }
 
