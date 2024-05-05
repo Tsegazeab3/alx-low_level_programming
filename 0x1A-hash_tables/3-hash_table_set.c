@@ -9,15 +9,17 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	char *value_cp;
 	hash_node_t *node;
 	int index;
 
-
+	value_cp = malloc(strlen(value) + 1);
 	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	if (node == NULL || value_cp == NULL)
 		return (0);
+	value_cp = strdup(value);
 	node->key = strdup(key);
-	node->value = strdup(value);
+	node->value = value_cp;
 	node->next = NULL;
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] != NULL)
