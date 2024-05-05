@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-#include <string.h>
 /**
  * hash_table_set - sets a node into a table
  * @ht: the table
@@ -11,35 +10,31 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	char *value_cp;
 	hash_node_t *node;
+	hash_node_t *tmp;
 	int index;
 
-	value_cp = malloc(strlen(value) + 1);
 	node = malloc(sizeof(hash_node_t));
-	if (node == NULL || value_cp == NULL)
-	{
-		free(value_cp);
-		free(node);
+	if (node == NULL)
 		return (0);
-	}
-	strcpy(value_cp, value);
+	value_cp = strdup(value);
 	node->key = strdup(key);
 	node->value = value_cp;
 	node->next = NULL;
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] != NULL)
 	{
-		hash_node_t *tmp = ht->array[index];
-		while(tmp)
+		tmp = ht->array[index];
+		while (tmp)
 		{
-			if (strcmp(tmp->key,node->key) == 0)
+			if (strcmp(tmp->key, node->key) == 0)
 			{
-					tmp->value = node->value;
-					free(node);
-					return(1);
+				tmp->value = node->value;
+				free(node->key);
+				free(node);
+				return (1);
 			}
 			tmp = tmp->next;
 		}
-		free(tmp);
 		node->next = ht->array[index];
 		ht->array[index] = node;
 		return (1);
