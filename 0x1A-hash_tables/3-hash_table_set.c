@@ -28,13 +28,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] != NULL)
 	{
-		hash_node_t *tmp = malloc(sizeof(hash_node_t));
-		tmp = ht->array[index];
+		hash_node_t *tmp = ht->array[index];
 		while(tmp)
 		{
-			if (tmp->key == node->key)
+			if (strcmp(tmp->key,node->key) == 0)
 			{
 					tmp->value = node->value;
+					free(node);
 					return(1);
 			}
 			tmp = tmp->next;
