@@ -16,11 +16,8 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		hash_node_t *tmp = ht->array[i];
 
-		if (ht->array[i] && comma_flag == 1)
-		{
+		if (ht->array[i] != NULL && comma_flag == 1)
 			printf(", ");
-			comma_flag = 1;
-		}
 		for (j = 0; tmp != NULL; j++)
 		{
 			printf("'%s': '%s'", tmp->key, tmp->value);
@@ -28,10 +25,12 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 			tmp = tmp->next;
 		}
-
+		if (ht->array[i] != NULL && comma_flag == 0)
+			comma_flag = 1;
 	}
 	printf("}");
 	printf("\n");
+	comma_flag = 0;
 }
 
 
