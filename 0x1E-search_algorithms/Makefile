@@ -16,7 +16,7 @@ question_3: 102-interpolation.c tests/test_interpolation.c search_algos.h
 	echo "making quetion_3"
 	gcc ${CFLAGS} 102-interpolation.c tests/test_interpolation.c -o question_3
 	chmod u+x question_3
-question_4: 103-exponential.c tests/test_exponential.c search_algos.h 1-binary.c
+question_4: 103-exponential.c tests/test_exponential.c search_algos.h 
 	echo "making quetion_4"
-	gcc ${CFLAGS} 1-binary.c 103-exponential.c tests/test_exponential.c -lm -o question_4
+	gcc ${CFLAGS} 103-exponential.c tests/test_exponential.c -o question_4
 	chmod u+x question_4
