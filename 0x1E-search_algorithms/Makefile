@@ -12,3 +12,7 @@ question_2: 100-jump.c tests/test_jump.c search_algos.h
 	echo "making quetion_2"
 	gcc ${CFLAGS} 100-jump.c tests/test_jump.c -lm -o question_2
 	chmod u+x question_2
+question_3: 102-interpolation.c tests/test_interpolation.c search_algos.h
+	echo "making quetion_3"
+	gcc ${CFLAGS} 102-interpolation.c tests/test_interpolation.c -o question_3
+	chmod u+x question_3
