@@ -16,7 +16,7 @@ int binary_algorithm(int *array, int value, size_t left, size_t right)
 	{
 		return (-1);
 	}
-	printf("Seaching in array:");
+	printf("Seaching in array: ");
 	for (i = left; i < right; i++)
 	{
 		if (i != right - 1)
