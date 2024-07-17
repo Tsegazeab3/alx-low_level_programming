@@ -7,15 +7,10 @@
 * @right: the adjustable value to the right
 * Return: the index of a value
  */
-int binary_algorithm(int *array, int value, size_t left, size_t right)
+void print_array(int *array, size_t left, size_t right)
 {
-	size_t mid = (left + (right - 1)) / 2;
-	size_t i;
+	size_t i = 0;
 
-	if (left >= right)
-	{
-		return (-1);
-	}
 	printf("Seaching in array: ");
 	for (i = left; i < right; i++)
 	{
@@ -24,12 +19,7 @@ int binary_algorithm(int *array, int value, size_t left, size_t right)
 		else
 			printf("%d\n", array[i]);
 	}
-	if (array[mid] == value)
-		return (mid);
-	else if (array[mid] > value)
-		return (binary_algorithm(array, value, left, mid));
-	else
-		return (binary_algorithm(array, value, mid + 1, right));
+	return;
 }
 /**
 * binary_search - searches through a sorted array in the binary_algorithm
@@ -40,10 +30,22 @@ int binary_algorithm(int *array, int value, size_t left, size_t right)
 */
 int binary_search(int *array, size_t size, int value)
 {
-	int i;
-
-	if (array == NULL)
-		return (-1);
-	i = binary_algorithm(array, value, 0, size);
-	return (i);
+	size_t low = 0;
+	size_t high = size - 1;
+	int mid;
+	if (array != NULL)
+	{
+		while(low < high)
+		{
+			print_array(array, low, high);
+			mid = (low + high) / 2;
+			if (array[mid] == value)
+				return (mid);
+			else if (array[mid] < value)
+				low = mid + 1; 
+			else if (array[mid] > value)
+				high = mid - 1;
+		}
+	}
+	return (-1);
 }
