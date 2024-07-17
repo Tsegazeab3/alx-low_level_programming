@@ -40,9 +40,10 @@ int binary_algorithm(int *array, int value, size_t left, size_t right)
 */
 int binary_search(int *array, size_t size, int value)
 {
+	int i;
+
 	if (array == NULL)
 		return (-1);
-	int i = binary_algorithm(array, value, 0, size);
-
+	i = binary_algorithm(array, value, 0, size);
 	return (i);
 }
