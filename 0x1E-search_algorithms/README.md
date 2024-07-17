@@ -46,6 +46,3 @@ general requirements for my code:
             If value is not present in array or if array is NULL, your function must return -1
             You must print the array being searched every time it changes. (e.g. at the beginning and when you search a subarray) (See example) -->
     
-
-
-
