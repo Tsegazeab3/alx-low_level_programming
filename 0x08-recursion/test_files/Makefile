@@ -3,7 +3,7 @@ CC = gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 test_0: ../_putchar.c 0-main.c ../0-puts_recursion.c
 	$(CC) ../_putchar.c 0-main.c ../0-puts_recursion.c -o test0 
 test_1: ../_putchar.c 1-main.c ../1-print_rev_recursion.c
-	$(CC) ../_putchar.c 1-main.c ../1-print_rev_recursion -o test1
+	$(CC) ../_putchar.c 1-main.c ../1-print_rev_recursion.c -o test1
 test_2: ../_putchar.c 2-main.c ../2-strlen_recursion.c 
 	$(CC) ../_putchar.c 2-main.c ../2-strlen_recursion.c -o test2
 test_3: ../_putchar.c 3-main.c ../3-factorial.c 
