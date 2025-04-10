@@ -16,7 +16,7 @@ test_6: ../_putchar.c 6-main.c ../6-is_prime_number.c
 	$(CC) ../_putchar.c 6-main.c ../6-is_prime_number.c -o test6
 test_7: ../_putchar.c 100-main.c ../100-is_palindrome.c 
 	$(CC) ../_putchar.c 100-main.c ../100-is_palindrome.c -o test7
-test_7: ../_putchar.c 100-main.c ../101-wildcmp.c 
+test_8: ../_putchar.c 100-main.c ../101-wildcmp.c 
 	$(CC) ../_putchar.c 100-main.c ../101-wildcmp.c -o test8 
 clean:
 	rm test

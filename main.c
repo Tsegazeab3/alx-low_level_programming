@@ -12,18 +12,25 @@ int strStr(char* haystack, char* needle) {
     char* haystack_ptr = haystack;
     while(*haystack_ptr != '\0')
     {
-        needle_ptr = needle;
         if(*haystack_ptr == *needle_ptr)
         {
+            needle_ptr = needle;
             start_index = index;
             while(*needle_ptr == *haystack_ptr)
             {
                 needle_ptr++;
                 haystack_ptr++;
                 index++;
+                printf("found simmilar %c, %c \n",*haystack_ptr, *needle_ptr);
+                printf("\n");
+                if(*needle_ptr == '\0')
+                    return(start_index);
             }
-            if(*needle_ptr == '\0')
-                return(start_index);
+            if(*haystack_ptr == '\0')
+            {
+                printf("upper return");
+                return(-1);
+            }
         }
         else
         {
@@ -31,13 +38,13 @@ int strStr(char* haystack, char* needle) {
             index++;
         }
     }
-    
+    printf("this is where things got wrong");
     return(-1);
 }
 int main(void)
 {
-    char haystack[5] = "aaaa\0";
-    char needle[3] = "aa\0"; 
+    char haystack[] ="mississippi\0";
+    char needle[] = "issip\0";
     printf("index: %d\n", strStr(haystack, needle));
     return(0);
 }
