@@ -20,12 +20,12 @@ int strStr(char* haystack, char* needle) {
             final_ans = alt_index;
             counter = 0;
             haystack_ptr = haystack;
-            while(*needle_ptr == *haystack_ptr)
+            while (*needle_ptr != '\0' && *haystack_ptr != '\0' && *needle_ptr == *haystack_ptr)
             {
                 needle_ptr++;
                 haystack_ptr++;
                 counter++;
-                if(bool == 0 && haystack_ptr == needle)
+                if(bool == 0 && *haystack_ptr == *needle)
                 {
                     bool = 1;
                     haystack = haystack_ptr;
@@ -35,10 +35,6 @@ int strStr(char* haystack, char* needle) {
             if(*needle_ptr == '\0')
                 return(final_ans);
 
-            if(*haystack == '\0')
-            {
-                return(-1);
-            }
         }
         if(bool == 0)
         {
@@ -50,8 +46,8 @@ int strStr(char* haystack, char* needle) {
 }
 int main(void)
 {
-    char haystack[] ="aa\0";
-    char needle[] = "aaa\0";
+    char haystack[] ="a\0";
+    char needle[] = "a\0";
     printf("index: %d\n", strStr(haystack, needle));
     return(0);
 }
