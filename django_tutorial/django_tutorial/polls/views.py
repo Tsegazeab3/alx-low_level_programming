@@ -1,6 +1,4 @@
 from django.http import HttpResponse 
+def detail(request, question_id):
+    return HttpResponse(f"You're looking at question {str(question_id)}")
 
-# Create your views here.
-def index(request):
-    return HttpResponse("hello world".encode('utf-8'))
-    

@@ -7,7 +7,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField("publication date")
 
     def __str__(self):
-        return self.question_text
+        return str(self.question_text)
     def is_latest_news(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
@@ -16,6 +16,6 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length = 200)
     votes = models.IntegerField()
     def __str__(self):
-        return self.choice_text
+        return str(self.choice_text)
 
 

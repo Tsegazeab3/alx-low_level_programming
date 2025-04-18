@@ -1,4 +1,4 @@
-#!/home/nostalgia/django_tutorial/django/bin/python3
+#!/home/tsegazeab/alx-low_level_programming/django_tutorial/django/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
