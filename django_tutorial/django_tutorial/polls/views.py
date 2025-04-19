@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
+from django.template import context
 from .models import Question
 def return_question_text(question):
     return(question.question_text)
@@ -12,8 +13,10 @@ def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
         return(render(request, "polls/detail.html",{"question": question}))
-    except Http404:
-        return(render(request, "polls/404.html",{"question_id": question_id}))
+    except Question.DoesNotExist:
+        context = {"question_id": question_id, 
+                   "q":Question.objects.order_by("pub_date")[:5]}
+        return(render(request, "polls/404.html",context))
 def results(request, question_id):
     response = f"You're looking at question{str(question_id)}."
     return(HttpResponse(response.encode('utf-8')))

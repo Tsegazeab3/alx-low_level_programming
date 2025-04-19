@@ -2,15 +2,11 @@
 	<body>
 		{% if question%}
 		<h1>{{question.question_text}}	</h1>
-
-		{% for choice in question.choice_sets.all%}
-		<ul>
-			<li>{{question.id}} {{choice.choice_text}}</li>
-		</ul>
-		{%endfor%}
-		<!-- {%else%} -->
-		<!-- <h1> no choices</h1>	 -->
-		{%endif%}
+			{% for choice in question.choice_set.all%}
+			<ol>
+			<li>{{question.id}}{{choice.choice_text}}</li>
+			</ol>
+			{%endfor%}
 		{%else%}
 		<h1> no questions given </h1>
 		{%endif%}
