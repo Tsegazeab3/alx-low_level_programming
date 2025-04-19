@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+	<head>
+		<title> my polls app</title>
+	</head>
+	<body>
+		{% if q%}
+			<ul>
+				{% for question in q%}
+			<li><a href="polls/question_number/{{question.id}}/">{{question.question_text}}</a>
+				{%endfor%}
+			</ul>
+		{%else%}
+				<h1> no list found </h1>
+		{%endif%}
+	<!-- <header class="my_upper"> -->
+	<!-- 	<button id = "home_button"> HOME </button> -->
+	<!-- 	<button class= "sign_in"> signin</button> -->
+	<!-- 	<button class = "sign_in"> signup</button> -->
+	<!-- 	<button class = "profile"> picture</button> -->
+	<!-- </header> -->
+	<!-- <body> -->
+	<!-- 	<h1> this is my polls app</h1> -->
+	<!-- 	<h2> enjoy!</h2> -->
+	<!-- 	<button>latest surveys</button> -->
+	<!-- 	<button>Create a poll</button> -->
+	<!-- 	<button> -->
+	<!---->
+	</body>
+</html>
